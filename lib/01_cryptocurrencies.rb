@@ -12,9 +12,41 @@ end
 
 puts "*********************************************************"
 
-myhash2 = myhash.sort_by { | key, value| value.to_i}
+myhash2 = myhash.sort_by { | key, value| value.to_f}
 
 
 myhash2.each do | key, value |
     puts "key:  #{key}, value : #{value} " 
     end
+
+    puts "*********************************************************"
+
+    myhash3 = myhash.sort_by{ | key, value| value.to_f}.reverse
+    
+    
+    myhash3.each do | key, value |
+        puts "key:  #{key}, value : #{value} " 
+        end
+
+
+
+
+
+ puts "******************* devise cours > 6000    "       
+ myhash.each do | key, value |
+    if value.to_f > 6000
+    puts "key:  #{key}, value : #{value} " 
+    end
+end
+
+puts "******************* devise cours >6000   la plus chere   "       
+expensive_hash = {}
+myhash.each do | key, value |
+   if value.to_f > 6000
+   expensive_hash[key]=value
+   
+   
+   end
+end
+expensive_hash.sort_by{ | key, value| value.to_f}
+puts expensive_hash.to_a.last
