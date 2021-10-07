@@ -9,3 +9,12 @@ myhash = Hash[ array1.zip(array2)]
 myhash.each do | key, value |
 puts "key:  #{key}, value : #{value} " 
 end
+
+puts "*********************************************************"
+
+myhash2 = myhash.sort_by { | key, value| value.to_i}
+
+
+myhash2.each do | key, value |
+    puts "key:  #{key}, value : #{value} " 
+    end
